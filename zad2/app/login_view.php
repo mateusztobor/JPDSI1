@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Mateusz Tobor">
 		<!-- Bootstrap core CSS -->
-		<link href="<?php print(_APP_URL);?>bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link href="<?php print(_APP_URL);?>bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 		<!-- Inne -->
 		<meta name="theme-color" content="#7952b3">
 		<style>
@@ -87,6 +87,6 @@
 				<span class="text-muted">Zad 2. by <a href="//matva.eu.org">Mateusz Tobor</a></span>
 			</div>
 		</footer>
-		<script src="<?php print(_APP_URL);?>bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script src="<?php print(_APP_URL);?>bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	</body>
 </html>

@@ -6,6 +6,10 @@ $smarty->debugging = false;
 $smarty->caching = false;
 //$smarty->cache_lifetime = 0;
 
+/*config*/
+
+
+
 if(isset($_POST['post_kwota'])) $smarty -> assign('value_kwota', $_POST['post_kwota']);
 else $smarty -> assign('value_kwota', "");
 
