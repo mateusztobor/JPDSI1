@@ -1,0 +1,47 @@
+<?php
+/* Smarty version 4.1.0, created on 2022-03-22 19:37:18
+  from 'D:\xampp\htdocs\JPDSI1\projekt_zaliczeniowy\inc\tpl\head_start.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.1.0',
+  'unifunc' => 'content_623a175ecadb57_88524601',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '31332abca93aff49c4b91c60df602cd1c801d4e2' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\JPDSI1\\projekt_zaliczeniowy\\inc\\tpl\\head_start.tpl',
+      1 => 1647974233,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_623a175ecadb57_88524601 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
+<html lang="pl" class="h-100">
+	<head>
+		<!-- title -->
+		<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</title>
+		<!-- META -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="<?php echo $_smarty_tpl->smarty->ext->configload->_getConfigVariable($_smarty_tpl, 'app_author');?>
+">
+		<!-- Bootstrap core CSS -->
+		<link href="<?php echo $_smarty_tpl->tpl_vars['system_url']->value;
+echo $_smarty_tpl->tpl_vars['bootstrap_path']->value;?>
+css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		
+		
+		<link href="<?php echo $_smarty_tpl->tpl_vars['system_url']->value;?>
+css/style.css" rel="stylesheet" crossorigin="anonymous">
+		<link href="<?php echo $_smarty_tpl->tpl_vars['system_url']->value;?>
+favicon.png" rel="icon" sizes="256x256">
+		<!-- Inne -->
+		<meta name="theme-color" content="#7952b3"><?php }
+}

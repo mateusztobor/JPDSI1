@@ -1,3 +1,3 @@
 <?php
-	$lang->set('no','nie');
+	$lang->set('test','test');
 	

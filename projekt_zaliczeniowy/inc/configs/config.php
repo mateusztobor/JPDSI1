@@ -1,24 +1,37 @@
 <?php
 	//System settings
-	$config->set('timezone','Europe/Warsaw');
-	$config->set('charset','utf-8');
-	$config->set('error_reporting',E_ALL);
-	$config->set('languages',array('pl'));
-	$config->set('default_language','pl');
-	$config->set('url','http://localhost/JPDSI1/projekt_zaliczeniowy/');
+	$config->set('system_timezone','Europe/Warsaw');
+	$config->set('system_charset','utf-8');
+	$config->set('system_error_reporting',E_ALL);
+	$config->set('system_languages',array('pl'));
+	$config->set('system_default_language','pl');
+	$config->set('system_app_start','start');
+	$config->set('system_app_404','404');
+	$config->set('system_url','http://localhost/JPDSI1/projekt_zaliczeniowy/');
 	//Security
-	$config->set('pass_hashsecurity','g#Em1&9');
-	$config->set('sess_hashsecurity','hu%5@.pro');
+	$config->set('system_user_cookiename',md5('g#Em1&9'));
 	//Database
-	$config->set('db_users','./inc/db/users.db');
-	$config->set('db_posts','.inc/db/posts.db');
+	$config->set('system_db','./inc/db/db.db');
+	//Bootstrap
+	$config->set('bootstrap_path','inc/libs/bootstrap/');
 	//Smarty
 	$config->set('smarty_debugging',false);
 	$config->set('smarty_CacheDir','./cache/smarty/');
 	$config->set('smarty_caching',false);
 	$config->set('smarty_cache_lifetime',120);
 	$config->set('smarty_ConfigDir','./inc/configs/smarty/');
+	$config->set('smarty_PluginsDir','./inc/smarty_plugins/');
 	$config->set('smarty_TemplateDir','./inc/tpl/');
 	$config->set('smarty_CompileDir','./cache/smarty_c/');
 	$config->set('smarty_force_compile',false);
+	
+	
+	//values, which user can use in smarty template
+	$config->set('smarty_allowedConfigValues', array(
+													"system_url",
+													"system_charset",
+													"system_timezone",
+													"system_current_language",
+													"bootstrap_path"
+												));
 	

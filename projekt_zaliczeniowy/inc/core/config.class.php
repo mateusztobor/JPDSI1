@@ -11,7 +11,7 @@
 			return "NULL";
 		}
 		
-		public function load() {
+		public function getAll() {
 			return $this->config;
 		}
 	}
