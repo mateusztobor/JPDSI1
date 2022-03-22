@@ -1,6 +1,6 @@
 <?php
 	class core {
-		private $config, $db, $lang, $tpl, $app;
+		private $config, $db, $lang, $tpl, $_secure, $secure, $app;
 		
 		public function __construct() {
 			//open buffer
@@ -16,15 +16,21 @@
 			date_default_timezone_set($this->config->get('system_timezone'));
 			//start session
 			session_start();
-
+			
+			$this->load_secure();
+			
 			$this->load_smarty();
 			
-			$this->db = new PDO('sqlite:'.$this->config->get('system_db'));
-			//$db = new SQLite3($this->config->get('system_db'));
+			$this->db = new PDO('sqlite:'.$this->config->get('system_db_path'));
+			
+			
 			
 			$this->load_app();
 			
 			ob_end_flush();
+			
+			//if($this->user['is_logged']) echo "ok";
+			//else echo "nie ok";
 		}
 		
 		private function load_config() {
@@ -34,6 +40,11 @@
 			require_once './inc/configs/config.php';
 			$this->config = $config;
 			unset($config);
+		}
+		
+		private function load_secure() {
+			require_once './inc/core/secure.class.php';
+			$this->secure = new secure($this->config->get('system_user_cookiename'));
 		}
 		
 		private function load_smarty() {
@@ -52,6 +63,10 @@
 			foreach($this->config->get('smarty_allowedConfigValues') as $config_field) {
 				$tpl->assign($config_field,$this->config->get($config_field));
 			}
+			foreach($this->config->get('smarty_allowedSecureValues') as $secure_field) {
+				if(isset($this->secure->get()[$secure_field]))
+					$tpl->assign($secure_field,$this->secure->get()[$secure_field]);	
+			}
 			$this->tpl = $tpl;
 			unset($tpl);
 		}
@@ -68,9 +83,20 @@
 				}
 				
 				include './inc/apps/'.$_GET['app'].'.app.php';
-				$this->tpl->display('app_'.$_GET['app'].'.tpl');
 				
-			} else include './inc/apps/'.$this->config->get('system_app_404').'.app.php';
+				if(file_exists($this->config->get('smarty_TemplateDir').'/app_'.$_GET['app'].'.tpl'))
+					$this->tpl->display('app_'.$_GET['app'].'.tpl');
+				
+			} else {
+				if(file_exists($this->config->get('smarty_TemplateDir').'/'.$this->config->get('system_page_404').'.tpl'))
+					$this->tpl->display($this->config->get('system_page_404').'.tpl');
+				else print('404');
+			}
+		}
+		
+		//będzie robione
+		private function load_plugins() {
+			return false;
 		}
 		
 		private function set_lang($lang) {
@@ -78,5 +104,6 @@
 			require_once './inc/langs/'.$this->config->get('system_default_language').'.lang.php';
 			$this->lang = $lang;
 			unset($lang);
+			$this->config->set('system_current_language',$lang);
 		}
 	}

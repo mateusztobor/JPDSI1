@@ -6,12 +6,12 @@
 	$config->set('system_languages',array('pl'));
 	$config->set('system_default_language','pl');
 	$config->set('system_app_start','start');
-	$config->set('system_app_404','404');
+	$config->set('system_page_404','404');
 	$config->set('system_url','http://localhost/JPDSI1/projekt_zaliczeniowy/');
 	//Security
 	$config->set('system_user_cookiename',md5('g#Em1&9'));
 	//Database
-	$config->set('system_db','./inc/db/db.db');
+	$config->set('system_db_path','./inc/db/db.db');
 	//Bootstrap
 	$config->set('bootstrap_path','inc/libs/bootstrap/');
 	//Smarty
@@ -34,4 +34,10 @@
 													"system_current_language",
 													"bootstrap_path"
 												));
-	
+												
+	//values, which user can use in smarty template
+	$config->set('smarty_allowedSecureValues', array(
+													"user_logged",
+													"user_email",
+													"user_nick"
+												));
