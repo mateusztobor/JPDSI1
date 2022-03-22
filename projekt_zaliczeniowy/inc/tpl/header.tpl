@@ -5,7 +5,7 @@
 			<a class="navbar-brand" href="{$system_url}">
 			N<img src="{$system_url}favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">TUŚ
 			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="{$lang.header_toggle_nav}">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
@@ -13,8 +13,8 @@
 					{include file="nav.tpl"}
 				</ul>
 				<form class="d-flex">
-					<input class="form-control me-2 col-lg" type="search" id="getnotus" placeholder="Wpisz id lub tytuł notatki :)" aria-label="Search">
-					<button class="btn btn-warning" type="submit">»</button>
+					<input class="form-control me-2 col-lg" type="search" id="getnotus" placeholder="{$lang.header_search_placeholder}" aria-label="Search">
+					<button class="btn btn-warning" type="submit">{$lang.header_search_btn}</button>
 				</form>
 			</div>
 		</div>
