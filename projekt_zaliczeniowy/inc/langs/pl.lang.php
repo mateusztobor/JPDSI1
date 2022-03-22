@@ -1,3 +1,3 @@
 <?php
-	$lang->set('fuck','kurwa');
+	$lang->set('no','nie');
 	
