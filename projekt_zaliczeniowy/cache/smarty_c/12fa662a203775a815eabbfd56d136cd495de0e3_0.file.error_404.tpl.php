@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-22 22:52:11
-  from 'D:\xampp\htdocs\JPDSI1\projekt_zaliczeniowy\inc\tpl\app_start.tpl' */
+/* Smarty version 4.1.0, created on 2022-03-22 21:42:54
+  from 'D:\xampp\htdocs\JPDSI1\projekt_zaliczeniowy\inc\tpl\error_404.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_623a450b1666e8_85618228',
+  'unifunc' => 'content_623a34ce3c8c19_89400085',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '922fc9cb4319e60ef2263b23d8e1fe02e17331c7' => 
+    '12fa662a203775a815eabbfd56d136cd495de0e3' => 
     array (
-      0 => 'D:\\xampp\\htdocs\\JPDSI1\\projekt_zaliczeniowy\\inc\\tpl\\app_start.tpl',
-      1 => 1647983055,
+      0 => 'D:\\xampp\\htdocs\\JPDSI1\\projekt_zaliczeniowy\\inc\\tpl\\error_404.tpl',
+      1 => 1647980402,
       2 => 'file',
     ),
   ),
@@ -27,17 +27,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:end.tpl' => 1,
   ),
 ),false)) {
-function content_623a450b1666e8_85618228 (Smarty_Internal_Template $_smarty_tpl) {
+function content_623a34ce3c8c19_89400085 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:head_start.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>"Notuś"), 0, false);
 $_smarty_tpl->_subTemplateRender("file:head_end.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:content_start.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-		<?php echo $_smarty_tpl->tpl_vars['lang']->value['test'];?>
 
-		<h1>Sticky footer with fixed navbar</h1>
-		<p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
+
+		<h1 class="color-pink">Błąd 404</h1>
+		:(
 		<p>Back to <a href="/docs/5.1/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
+		
+		
+		
 <?php $_smarty_tpl->_subTemplateRender("file:content_end.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:end.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

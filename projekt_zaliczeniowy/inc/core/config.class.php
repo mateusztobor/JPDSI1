@@ -10,8 +10,4 @@
 			if(isset($this->config[$field])) return $this->config[$field];
 			return "NULL";
 		}
-		
-		public function getAll() {
-			return $this->config;
-		}
 	}

@@ -6,7 +6,8 @@
 	$config->set('system_languages',array('pl'));
 	$config->set('system_default_language','pl');
 	$config->set('system_app_start','start');
-	$config->set('system_page_404','404');
+	$config->set('system_page_404','error_404');
+	$config->set('system_page_403','error_403');
 	$config->set('system_url','http://localhost/JPDSI1/projekt_zaliczeniowy/');
 	//Security
 	$config->set('system_user_cookiename',md5('g#Em1&9'));

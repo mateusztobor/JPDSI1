@@ -7,7 +7,7 @@
 			if(isset($_SESSION[$cookiename])) $this->sess = $_SESSION[$cookiename];
 		}
 		
-		private function is_logged() {
+		public function is_logged() {
 			/*
 			if(isset($this->sess)) {
 				$q=$db->query('SELECT type FROM players WHERE id="'.$_SESSION[$this->sess_hashsecurity]['id'].'" AND password = "'.$_SESSION[$this->sess_hashsecurity]['key'].'" LIMIT 1;');

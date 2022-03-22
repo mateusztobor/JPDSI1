@@ -1,6 +1,6 @@
 <?php
 	class core {
-		private $config, $db, $lang, $tpl, $_secure, $secure, $app;
+		private $config, $db, $lang, $tpl, $secure, $app;
 		
 		public function __construct() {
 			//open buffer
@@ -24,6 +24,9 @@
 			$this->db = new PDO('sqlite:'.$this->config->get('system_db_path'));
 			
 			
+			$this->set_lang($this->config->get('system_default_language'));
+			
+			//$this->load_plugins();
 			
 			$this->load_app();
 			
@@ -87,10 +90,27 @@
 				if(file_exists($this->config->get('smarty_TemplateDir').'/app_'.$_GET['app'].'.tpl'))
 					$this->tpl->display('app_'.$_GET['app'].'.tpl');
 				
-			} else {
-				if(file_exists($this->config->get('smarty_TemplateDir').'/'.$this->config->get('system_page_404').'.tpl'))
-					$this->tpl->display($this->config->get('system_page_404').'.tpl');
-				else print('404');
+			} else $this->tpl_print_error(404);
+		}
+		
+		private function tpl_print_error($error) {
+			if(file_exists($this->config->get('smarty_TemplateDir').'/'.$this->config->get('system_page_'.$error).'.tpl'))
+				$this->tpl->display($this->config->get('system_page_'.$error).'.tpl');
+			else print($error);
+		}
+		
+		private function app_secure($what) {
+			if($what == "logged") {
+				if(!$this->secure->is_logged()) {
+					$this->tpl_print_error(403);
+					exit;
+				}
+			}
+			elseif($what == "not_logged") {
+				if($this->secure->is_logged()) {
+					$this->tpl_print_error(403);
+					exit;
+				}
 			}
 		}
 		
@@ -99,11 +119,13 @@
 			return false;
 		}
 		
-		private function set_lang($lang) {
-			$lang = new config;
-			require_once './inc/langs/'.$this->config->get('system_default_language').'.lang.php';
+		private function set_lang($_lang) {
+			require_once './inc/core/lang.class.php';
+			$lang = new lang;
+			require_once './inc/langs/'.$_lang.'.lang.php';
 			$this->lang = $lang;
 			unset($lang);
-			$this->config->set('system_current_language',$lang);
+			$this->tpl->assign('lang',$this->lang->getAll());		
+			$this->config->set('system_current_language',$_lang);
 		}
 	}
