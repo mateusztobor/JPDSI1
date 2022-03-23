@@ -1,6 +1,6 @@
 <?php
 	class core {
-		private $config, $db, $lang, $tpl, $secure, $app;
+		private $config, $db, $lang, $tpl, $secure, $app, $sess;
 		
 		public function __construct() {
 			//open buffer
@@ -17,11 +17,11 @@
 			//start session
 			session_start();
 			
+			$this->load_db();
 			$this->load_secure();
 			
 			$this->load_smarty();
 			
-			$this->db = new PDO('sqlite:'.$this->config->get('system_db_path'));
 			
 			
 			$this->set_lang($this->config->get('system_default_language'));
@@ -31,9 +31,6 @@
 			$this->load_app();
 			
 			ob_end_flush();
-			
-			//if($this->user['is_logged']) echo "ok";
-			//else echo "nie ok";
 		}
 		
 		private function load_config() {
@@ -45,9 +42,18 @@
 			unset($config);
 		}
 		
+		private function load_db() {
+			$this->db = new SQLite3($this->config->get('system_db_path'));
+			if(!$this->db) {
+				$this->tpl_print_error('error_db');
+				exit;
+			}
+		}
+		
 		private function load_secure() {
 			require_once './inc/core/secure.class.php';
-			$this->secure = new secure($this->config->get('system_user_cookiename'));
+			$this->secure = new secure($this->db,$this->config->get('system_user_cookiename'));
+			$this->sess = $this->secure->load_sess();
 		}
 		
 		private function load_smarty() {

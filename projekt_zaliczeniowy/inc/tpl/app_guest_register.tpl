@@ -3,7 +3,8 @@
 {include file="header.tpl"}
 {include file="content_start.tpl"}
 <h1>{$lang.guest_register_title2}</h1>
-{$guest_register_message}
+<div class="mb-3"><code>{$lang.guest_register_desc}</code></div>
+{$guest_register_alerts}
 
 <form action="{$system_url}guest/register" method="post">
 	<div class="form-group mb-3">
@@ -13,16 +14,18 @@
 	<div class="form-group mb-3">
 		<label for="id_nick">{$lang.guest_register_nick}</label>
 		<input name="post_nick" value="" required type="text" class="form-control" id="id_nick" placeholder="{$lang.guest_register_nick_placeholder}">
+		<small class="form-text text-muted">{$lang.guest_register_nick_info}</small>
 	</div>
 	<div class="form-group mb-3">
 		<label for="id_password">{$lang.guest_register_password}</label>
-		<input name="post_password" value="" required type="password" class="form-control" id="id_password" placeholder="{$lang.guest_register_password_placeholder}">
+		<input name="post_password" value="" required type="password" pattern="{$lang.guest_register_password_preg}" class="form-control" id="id_password" placeholder="{$lang.guest_register_password_placeholder}">
+		<small class="form-text text-muted">{$lang.guest_register_password_info}</small>
 	</div>
 	<div class="form-group mb-3">
 		<label for="id_repassword">{$lang.guest_register_repassword}</label>
-		<input value="" required type="password" class="form-control" id="id_repassword" placeholder="{$lang.guest_register_repassword_placeholder}">
+		<input value="" required type="password" name="post_repassword" class="form-control" id="id_repassword" placeholder="{$lang.guest_register_repassword_placeholder}">
 	</div>
-	<button type="submit" class="btn btn-primary">{$lang.guest_register_btn}</button>
+	<button type="submit" class="btn btn-danger">{$lang.guest_register_btn}</button>
 </form>
 <script type="text/javascript">
     window.onload = function () {

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-22 21:33:30
+/* Smarty version 4.1.0, created on 2022-03-23 15:34:54
   from 'D:\xampp\htdocs\JPDSI1\projekt_zaliczeniowy\inc\tpl\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_623a329a900626_03256871',
+  'unifunc' => 'content_623b300e1415f2_40131370',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_623a329a900626_03256871 (Smarty_Internal_Template $_smarty_tpl) {
+function content_623b300e1415f2_40131370 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="footer mt-auto py-3 bg-danger text-light text-center">
   <div class="container text-light">
 	"Notuś" was created with <img src="<?php echo $_smarty_tpl->tpl_vars['system_url']->value;?>

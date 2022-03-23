@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-22 19:35:42
+/* Smarty version 4.1.0, created on 2022-03-23 15:34:54
   from 'D:\xampp\htdocs\JPDSI1\projekt_zaliczeniowy\inc\tpl\end.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_623a16fea49659_43622603',
+  'unifunc' => 'content_623b300e1a1159_58411571',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_623a16fea49659_43622603 (Smarty_Internal_Template $_smarty_tpl) {
+function content_623b300e1a1159_58411571 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['system_url']->value;
 echo $_smarty_tpl->tpl_vars['bootstrap_path']->value;?>

@@ -1,0 +1,1 @@
+<textarea id="notes" name="post_notes"></textarea>
