@@ -71,3 +71,6 @@
 	
 	//APP_NOTES
 	$lang->set('notes_guest_desc','Zaloguj się, aby móc lepiej zarządzać swoimi notatkami!');
+	$lang->set('notes_empty_notes','Nie można zapisać pustej notatki!');
+	$lang->set('notes_unkown_error','Błąd systemu.');
+	$lang->set('notes_save_button','Zapisz notusia');

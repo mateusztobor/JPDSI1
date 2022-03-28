@@ -4,7 +4,13 @@
 {include file="content_start.tpl"}
 
 <div class="mb-3 text-center"><code>{$lang.notes_guest_desc}</code></div>
-{include file="app_notes_field.tpl"}
+
+<div class="text-center">
+	{$notes_alerts}
+	{include file="app_notes_field.tpl"}
+	<button type="submit" class="btn btn-danger">{$lang.notes_save_button}</button>
+	</form>
+</div>
 
 {include file="content_end.tpl"}
 {include file="footer.tpl"}

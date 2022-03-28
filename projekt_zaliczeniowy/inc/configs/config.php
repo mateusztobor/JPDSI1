@@ -18,7 +18,7 @@
 	$config->set('system_db_path','./inc/db/db.db');
 	
 	//Notes app
-	$config->set('app_notes_pin_length',6);
+	$config->set('notes_pin_length',6);
 	
 	//Bootstrap
 	$config->set('bootstrap_path','inc/libs/bootstrap/');

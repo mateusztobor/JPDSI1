@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-23 15:34:53
+/* Smarty version 4.1.0, created on 2022-03-24 09:14:57
   from 'D:\xampp\htdocs\JPDSI1\projekt_zaliczeniowy\inc\tpl\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_623b300de22ef0_85657274',
+  'unifunc' => 'content_623c288102b897_36670543',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '17f5719d11bfd6c4d6372cdf81d92e6eb3d18572' => 
     array (
       0 => 'D:\\xampp\\htdocs\\JPDSI1\\projekt_zaliczeniowy\\inc\\tpl\\header.tpl',
-      1 => 1647990372,
+      1 => 1648109693,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:nav.tpl' => 1,
   ),
 ),false)) {
-function content_623b300de22ef0_85657274 (Smarty_Internal_Template $_smarty_tpl) {
+function content_623c288102b897_36670543 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-expand-md fixed-top bg-danger navbar-dark">
@@ -40,8 +40,10 @@ favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">TUŚ
 					<?php $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 				</ul>
-				<form class="d-flex">
-					<input class="form-control me-2 col-lg" type="search" id="getnotus" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['header_search_placeholder'];?>
+				<form class="d-flex" method="get" action="<?php echo $_smarty_tpl->tpl_vars['system_url']->value;?>
+index.php?app=search">
+					<input type="hidden" name="app" value="search">
+					<input name="id" class="form-control me-2 col-lg" type="search" id="getnotus" placeholder="<?php echo $_smarty_tpl->tpl_vars['lang']->value['header_search_placeholder'];?>
 " aria-label="Search">
 					<button class="btn btn-warning" type="submit"><?php echo $_smarty_tpl->tpl_vars['lang']->value['header_search_btn'];?>
 </button>
