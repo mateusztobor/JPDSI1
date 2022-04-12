@@ -8,6 +8,7 @@
 		}
 		elseif($_GET['id'] == "settings") {
 			$this->tpl->assign('user_chpass_alerts',"");
+			
 			$this->app->init($this->db,$this->sess);
 			
 			$this->app->change_password_form();
