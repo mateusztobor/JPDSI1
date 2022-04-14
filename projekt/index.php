@@ -1,31 +1,31 @@
 <?php
-	ob_start();
-	require 'private/config.php';
-	session_start();
-	error_reporting($config['system_error_reporting']);
-	header('Content-Type:text/html;charset='.$config['system_charset']);
-	date_default_timezone_set($config['system_timezone']);
+	ob_start();//Opening buffer
 	
-	require 'private/libs/flight/Flight.php';
+	require 'private/flight/Flight.php'; //Load framework
+	require 'private/config.php'; //Load configs
 	
-	/*
-	require 'private/libs/smarty/Smarty.class.php';
-	Flight::register('tpl', 'Smarty');
-	Flight::tpl()->setConfigDir($config['smarty_ConfigDir']);
-	Flight::tpl()->debugging = $config['smarty_debugging'];
-	Flight::tpl()->setCacheDir($config['smarty_CacheDir']);
-	Flight::tpl()->caching = $config['smarty_caching'];
-	Flight::tpl()->cache_lifetime = $config['smarty_cache_lifetime'];
-	Flight::tpl()->setConfigDir($config['smarty_ConfigDir']);
-	Flight::tpl()->setPluginsDir($config['smarty_PluginsDir']);
-	Flight::tpl()->setTemplateDir($config['smarty_TemplateDir']);
-	Flight::tpl()->setCompileDir($config['smarty_CompileDir']);
-	Flight::tpl()->force_compile = $config['smarty_force_compile'];
-	*/
+	session_start(); //Start session
+	error_reporting(Flight::get('php.error.reporting')); //set error reporting
+	header('Content-Type:text/html;charset='.Flight::get('php.charset')); //set header
+	date_default_timezone_set(Flight::get('php.timezone')); //set timezone
 	
+	function db_open() {
+		if(!Flight::get('db.opened')) {
+			Flight::register('db', 'SQLite3', array(Flight::get('db.path')));
+			Flight::set('db.opened',true);
+		}
+	}
+	function db_close() {
+		if(Flight::get('db.opened')) Flight::db()->close();
+	}
 	
 	foreach(glob('private/apps/*.app.php') as $file)
-		require $file;
+		require $file; //load apps
+		
+	Flight::start(); //run framework
 	
-	Flight::start();
+	//close db if opened
+	db_close();
+	
+	//End and clear buffer
 	ob_end_flush();

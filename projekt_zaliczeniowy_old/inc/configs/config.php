@@ -1,6 +1,21 @@
 <?php
+	class config {
+		private $config=array();
+		
+		public function set($field,$value) {
+			$this->config[$field] = $value;
+		}
+		
+		public function get($field) {
+			if(isset($this->config[$field])) return $this->config[$field];
+			return "NULL";
+		}
+	}
+	Flight::register('config','config');
+
+
 	//System settings
-	$config->set('system_timezone','Europe/Warsaw');
+	Flight::$config->set('system_timezone','Europe/Warsaw');
 	$config->set('system_charset','utf-8');
 	$config->set('system_error_reporting',E_ALL);
 	$config->set('system_languages',array('pl'));
@@ -10,6 +25,26 @@
 	$config->set('system_page_403','error_403');
 	$config->set('system_page_error_db','error_db');
 	$config->set('system_url','http://localhost/JPDSI1/projekt_zaliczeniowy/');
+	
+	//
+
+	/*
+	Flight::set('flight.log_errors', true);
+	Flight::set('flight.log_errors', true);
+	Flight::set('flight.log_errors', true);
+	Flight::set('flight.log_errors', true);
+	Flight::set('flight.log_errors', true);
+	*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//Security
 	$config->set('system_user_cookiename',md5('g#Em1&9'));
