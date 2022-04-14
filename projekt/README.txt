@@ -1,6 +1,6 @@
 ABOUT:
 > FRAMEWORK: FlightPHP
-> System szablonów: SMARTY
+> System szablonów: (BYŁ SMARTY, lecz zmieniłem na ten wbudowany)
 > Połączenie BD: SQLITE3
 
 Sources:
