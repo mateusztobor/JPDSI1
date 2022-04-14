@@ -3,7 +3,7 @@
 	//APP
 	Flight::set('app.name', 'Notuś');
 	Flight::set('app.url', 'http://localhost/JPDSI1/projekt/');
-	Flight::set('app.pin.length',6);
+	Flight::set('app.pin_length',6);
 	
 	//Flight
 	Flight::set('flight.base_url', NULL); //Override the base url of the request. (default: null)
@@ -14,7 +14,7 @@
 	Flight::set('flight.views.extension', '.tpl');
 	
 	//PHP
-	Flight::set('php.error.reporting', E_ALL);
+	Flight::set('php.error_reporting', E_ALL);
 	Flight::set('php.timezone', 'Europe/Warsaw');
 	Flight::set('php.charset', 'utf-8');
 	

@@ -5,7 +5,7 @@
 	require 'private/config.php'; //Load configs
 	
 	session_start(); //Start session
-	error_reporting(Flight::get('php.error.reporting')); //set error reporting
+	error_reporting(Flight::get('php.error_reporting')); //set error reporting
 	header('Content-Type:text/html;charset='.Flight::get('php.charset')); //set header
 	date_default_timezone_set(Flight::get('php.timezone')); //set timezone
 	
