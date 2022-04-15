@@ -1,1 +1,1 @@
-<div class="alert alert-{$type}" role="alert">{$alert}</div>
+<div class="alert alert-<?php print($type); ?>" role="alert"><?php print($content); ?></div>

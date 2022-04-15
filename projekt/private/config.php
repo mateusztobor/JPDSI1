@@ -3,7 +3,22 @@
 	//APP
 	Flight::set('app.name', 'Notuś');
 	Flight::set('app.url', 'http://localhost/JPDSI1/projekt/');
+	
+	Flight::set('app.lang','pl');
+	Flight::set('app.langs_path','private/langs/');
+	Flight::set('app.apps_path','private/apps/');
+	Flight::set('app.apps_ext','.app.php');
+	Flight::set('app.extensions_path','private/extensions/');
+	Flight::set('app.extensions_ext','.ext.php');
+	Flight::set('app.extensions_run_ext','.run.php');
+	Flight::set('app.session_name',md5('Notuś_LogIN'));
 	Flight::set('app.pin_length',6);
+	
+	//APP paths
+	Flight::set('app.path.notes','');
+	Flight::set('app.path.login','logowanie');
+	Flight::set('app.path.register','rejestracja');
+	Flight::set('app.path.logout','wyloguj');
 	
 	//Flight
 	Flight::set('flight.base_url', NULL); //Override the base url of the request. (default: null)
