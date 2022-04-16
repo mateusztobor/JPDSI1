@@ -2,7 +2,7 @@
 
 <div class="text-center">
 	{$notes_alerts}
-		<form action="{$system_url}notes" method="post">
+		<form action="<?php print(Flight::get('app.url').Flight::get('app.path.notes')); ?>" method="post">
 		<textarea id="notes" name="post_notes"></textarea>
 		<button type="submit" class="btn btn-danger"><?php print(Flight::get('lang.notes_save_button')); ?></button>
 	</form>
