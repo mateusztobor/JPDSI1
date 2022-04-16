@@ -19,6 +19,7 @@
 	
 	//APPS paths
 	Flight::set('app.path.notes','');
+	Flight::set('app.path.search','szukaj');
 	Flight::set('app.path.login','logowanie');
 	Flight::set('app.path.register','rejestracja');
 	Flight::set('app.path.account','ustawienia-konta');
