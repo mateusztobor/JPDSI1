@@ -1,8 +1,8 @@
 <h1><?php print(Flight::get('lang.guest_login_title2')); ?></h1>
 <div class="mb-3"><code><?php print(Flight::get('lang.guest_login_desc')); ?></code></div>
 <?php
-if(Flight::has('login_notify'))
-	Flight::render('alert', array('type' => 'warning', 'content'=>Flight::get('login_notify')));
+	if(Flight::has('login_notify'))
+		Flight::render('alert', array('type' => 'warning', 'content'=>Flight::get('login_notify')));
 ?>
 <form action="<?php print(Flight::get('app.url').Flight::get('app.path.login')); ?>" method="post">
 	<div class="form-group mb-3">

@@ -87,3 +87,8 @@
 	Flight::set('lang.404_title2','Błąd 404');
 	Flight::set('lang.404_desc','Strona, której szukasz nie istnieje :(');
 	Flight::set('lang.404_backhome','Powrót do strony głownej');
+	
+	//db
+	Flight::set('lang.db_title','Błąd systemu');
+	Flight::set('lang.db_title2','Błąd połączenia z bazą danych');
+	Flight::set('lang.db_desc','Przykro nam, ale strona obecnie ma problemy z połączeniem z bazą danych.<br>Wróć niebawem!');

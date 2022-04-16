@@ -5,7 +5,7 @@
 	  </a>
 
 	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-		<li><a class="dropdown-item" href="<?php print(Flight::get('app.url')); ?>user/settings"><?php print(Flight::get('lang.nav_user_account_settings')); ?></a></li>
+		<li><a class="dropdown-item" href="<?php print(Flight::get('app.url').Flight::get('app.path.account')); ?>"><?php print(Flight::get('lang.nav_user_account_settings')); ?></a></li>
 		<li><a class="dropdown-item" href="<?php print(Flight::get('app.url').Flight::get('app.path.logout')); ?>"><?php print(Flight::get('lang.nav_user_logout')); ?></a></li>
 	  </ul>
 	</div>
