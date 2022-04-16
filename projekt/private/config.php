@@ -1,6 +1,6 @@
 <?php
 	
-	//APP
+	//MAIN APP
 	Flight::set('app.name', 'Notuś');
 	Flight::set('app.url', 'http://localhost/JPDSI1/projekt/');
 	
@@ -8,13 +8,16 @@
 	Flight::set('app.langs_path','private/langs/');
 	Flight::set('app.apps_path','private/apps/');
 	Flight::set('app.apps_ext','.app.php');
+	Flight::set('app.appsclass_ext','.class.php');
 	Flight::set('app.extensions_path','private/extensions/');
 	Flight::set('app.extensions_ext','.ext.php');
 	Flight::set('app.extensions_run_ext','.run.php');
 	Flight::set('app.session_name',md5('Notuś_LogIN'));
-	Flight::set('app.pin_length',6);
 	
-	//APP paths
+	//Others APPS...
+	Flight::set('app.notes.pin_length',6);
+	
+	//APPS paths
 	Flight::set('app.path.notes','');
 	Flight::set('app.path.login','logowanie');
 	Flight::set('app.path.register','rejestracja');

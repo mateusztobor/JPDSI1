@@ -15,6 +15,9 @@
 	foreach(glob(Flight::get('app.extensions_path').'*'.Flight::get('app.extensions_run_ext')) as $file)
 		require $file; //load apps
 	
+	//load class for apps
+	foreach(glob(Flight::get('app.apps_path').'*'.Flight::get('app.appsclass_ext')) as $file)
+		require $file; //load apps
 	//load apps (route)
 	foreach(glob(Flight::get('app.apps_path').'*'.Flight::get('app.apps_ext')) as $file)
 		require $file; //load apps

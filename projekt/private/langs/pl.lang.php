@@ -81,6 +81,17 @@
 	Flight::set('lang.notes_unkown_error','Błąd systemu.');
 	Flight::set('lang.notes_save_button','Zapisz notusia');
 	
+	Flight::set('lang.notes.postview_title','Notatka: ');
+	Flight::set('lang.notes.postview_noaccess','Nie masz dostępu do tej notatki');
+	Flight::set('lang.notes.postview_copiedurl','Skopiowano do schowka');
+	Flight::set('lang.notes.postview_copyurl','Kopiuj adres do schowka');
+	Flight::set('lang.notes.postview_showtxt','Wyświetl jako txt');
+	Flight::set('lang.notes.postview_addnew','Stwórz nową notatkę');
+	
+	Flight::set('lang.notes.postview_notexist_title','Brak notatki');
+	Flight::set('lang.notes.postview_notexist','<p>Taka notatka nie istnieje :(</p>
+	<a href="'.Flight::get('app.url').Flight::get('app.path.notes').'" class="btn btn-danger">'.Flight::get('lang.notes.postview_addnew').'</a>');
+	
 	
 	//404
 	Flight::set('lang.404_title','Błąd');
