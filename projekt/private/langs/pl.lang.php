@@ -15,9 +15,10 @@
 	Flight::set('lang.nav_user_logout','Wyloguj');
 	Flight::set('lang.nav_user_my_notes','Moje notatki');
 	Flight::set('lang.nav_user_account_settings','Ustawienia konta');
+	Flight::set('lang.nav_user_my_categories','Zarządzaj kategoriami');
 	
 	//GUEST_REGISTER
-	Flight::set('lang.guest_register_title','Notuś - Tworzenie nowego konta');
+	Flight::set('lang.guest_register_title','Tworzenie nowego konta');
 	Flight::set('lang.guest_register_title2','Tworzenie nowego konta');
 	Flight::set('lang.guest_register_desc','Dzieli Cię tylko krok od swobodnego notowania!');
 	Flight::set('lang.guest_register_email','Twój adres email');
@@ -41,8 +42,8 @@
 	Flight::set('lang.guest_register_not_isset_nick','Nie podano nicku.');
 	Flight::set('lang.guest_register_nick_not_pass','Nick może mieć minimalnie 3, a maksymalnie 15 znaków.');
 	Flight::set('lang.guest_register_unknown_error','Błąd systemu. Konto nie mogło zostać stworzone.');
-	Flight::set('lang.guest_register_not_unique_email','Na podany adres email jest już utworzone konto.');
-	Flight::set('lang.guest_register_not_unique_nick','Taki nick jest już zajęty :(');
+	Flight::set('lang.guest_register_not_unique_email','Na podany adres email zostało już utworzone konto.');
+	Flight::set('lang.guest_register_not_unique_nick','Ten nick jest już zajęty :(');
 	Flight::set('lang.guest_register_success','Konto zostało utworzone :)');
 	
 	//GUEST_LOGIN
