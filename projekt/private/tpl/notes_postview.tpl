@@ -3,9 +3,24 @@
 <?php } ?>
 
 
-
+<div class="mb-3 row">
+	<div class="col-sm">
+		<select class="form-control" name="post_share" readonly>
+			<option value="1">Udostępnij wszystkim</option>
+			<option value="0">Tylko dla mnie</option>
+		</select>
+	</div>
+	<div class="col-sm">
+		<input class="form-control" placeholder="Tytuł notatki" name="post_title" value="<?php print(Flight::get('title')); ?>" name="post_title" readonly>
+	</div>
+	<div class="col-sm">
+		<select class="form-control" name="post_category">
+			<option value="">Domyślna kategoria</option>
+		</select>
+	</div>
+</div>
 <div class="text-center">
-		<textarea id="notes" name="post_notes" disabled><?php print(Flight::get('notes_post_content')); ?></textarea>
+		<textarea id="notes" class="form-control col-xs-12" readonly><?php print(Flight::get('notes_post_content')); ?></textarea>
 		<a href="<?php print(Flight::get('app.url').Flight::get('app.path.notes')); ?>" class="btn btn-danger"><?php print(Flight::get('lang.notes.postview_addnew')); ?></a>
 		
 		<a target="_blank" href="<?php print(Flight::get('app.url').'txt/'.Flight::get('post_id')); ?>" class="btn btn-danger"><?php print(Flight::get('lang.notes.postview_showtxt')); ?></a>

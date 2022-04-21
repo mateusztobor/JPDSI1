@@ -21,6 +21,7 @@ class notes_postview_controller {
 		}*/
 		
 		if($this->check_exists()) {
+			Flight::set('title',$this->get_title2());
 			$this->get_content();
 			Flight::render('main', array('title' => $this->get_title(), 'tpl'=>'notes_postview'));
 		} else {
@@ -45,6 +46,13 @@ class notes_postview_controller {
 		$title = Flight::db()->querySingle('SELECT title FROM posts WHERE pin="'.$this->id.'";');
 		if(empty($title)) return Flight::get('lang.notes.postview_title').$this->id;
 		else return Flight::get('lang.notes.postview_title').$title;
+	}
+	
+	private function get_title2() {
+		Flight::db_open();
+		$title = Flight::db()->querySingle('SELECT title FROM posts WHERE pin="'.$this->id.'";');
+		if(empty($title)) return $this->id;
+		else return $title;
 	}
 	
 	private function get_content() {
