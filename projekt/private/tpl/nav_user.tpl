@@ -11,7 +11,7 @@
 	</div>
 </li>
 <li class="nav-item">
-	<a class="nav-link" href="#"><?php print(Flight::get('lang.nav_user_my_notes')); ?></a>
+	<a class="nav-link" href="<?php print(Flight::get('app.url').Flight::get('app.path.posts')); ?>"><?php print(Flight::get('lang.nav_user_my_notes')); ?></a>
 </li>
 <li class="nav-item">
 	<a class="nav-link" href="#"><?php print(Flight::get('lang.nav_user_my_categories')); ?></a>

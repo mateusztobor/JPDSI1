@@ -93,6 +93,10 @@
 	Flight::set('lang.notes.postview_notexist','<p>Taka notatka nie istnieje :(</p>
 	<a href="'.Flight::get('app.url').Flight::get('app.path.notes').'" class="btn btn-danger">'.Flight::get('lang.notes.postview_addnew').'</a>');
 	
+	//posts
+	Flight::set('lang.share_all','Udostępnij wszystkim');
+	Flight::set('lang.not_share','Tylko dla mnie');
+	Flight::set('lang.default_category','Domyślna kategoria');
 	
 	//404
 	Flight::set('lang.404_title','Błąd');

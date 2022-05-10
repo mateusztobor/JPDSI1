@@ -24,14 +24,15 @@ class notes_postview_controller {
 			$this->get_post('share');
 			$this->get_post('author');
 			
-			//if(!Flight::set('notes_post_share') && Flight::get('notes_post_author') == Flight::get('user.id') || Flight::set('notes_post_share')) {
-				//exit();
+			if(!Flight::get('notes_post_share') && Flight::get('notes_post_author') == Flight::get('user.id') || Flight::get('notes_post_share') || Flight::get('user.type') == 2) {
 				
 				Flight::set('title',$this->get_title2());
 				$this->get_content();
 				
-				Flight::render('main', array('title' => Flight::get('notes_post_author'), 'tpl'=>'notes_postview'));
-			
+				Flight::render('main', array('title' => $this->get_title(), 'tpl'=>'notes_postview'));
+			} else {
+				exit('błond');
+			}
 		} else {
 			Flight::set('notify_title', Flight::get('lang.notes.postview_notexist_title'));
 			Flight::set('notify_type', 'danger');

@@ -7,12 +7,11 @@
 				
 			} else {
 				$tpl = "notes_user";
+				$this->get_categories_list();
 				$this->user_form();
-				
 			}
 			
 			Flight::render('main', array('title' => Flight::get('lang.notes_title'), 'tpl'=>$tpl));
-			
 		}
 		
 		//For guests (user.type = 0)
@@ -22,7 +21,7 @@
 					$content = htmlspecialchars($_POST['post_notes']);
 					$pin = Flight::get_pin_unique(Flight::get('app.notes.pin_length'),'posts','pin');
 					if($this->guest_insert_post($content,$pin))
-						Flight::redirect(Flight::get('app.url').$pin);
+						Flight::redirect(Flight::get('app.url').Flight::get('app.path.notes').$pin);
 				}
 			}
 		}
@@ -33,13 +32,11 @@
 			return Flight::db()->query($sql);
 		}
 		
-		
 		//For users (user.type = 1)
 		private function user_form() {
 			if(isset($_POST['post_notes']) && isset($_POST['post_share']) && isset($_POST['post_title']) && isset($_POST['post_category'])) {
 				
 				if($this->user_form_valid()) {
-					Flight::set('notify',"aaa");
 					$title = htmlspecialchars($_POST['post_title']);
 					$content = htmlspecialchars($_POST['post_notes']);
 					$share = (int)(htmlspecialchars($_POST['post_share']));
@@ -53,11 +50,10 @@
 						
 					}
 					
-					if($res) Flight::redirect(Flight::get('app.url').$pin);
+					if($res) Flight::redirect(Flight::get('app.url').Flight::get('app.path.notes').$pin);
 				
 				}
 			}
-			//Flight::set('notify',"NIE NIE NIE");
 		}
 		
 		private function user_form_valid() {
@@ -66,7 +62,6 @@
 			if(!empty($_POST['post_title'])) {
 				if(mb_strlen($_POST['post_title']) > 40) {
 					$ok=false;
-					
 				}
 			}
 
@@ -89,7 +84,6 @@
 			} else {
 				$ok=false;
 			}
-			
 			return $ok;
 		}
 		
@@ -100,23 +94,35 @@
 			return false;
 		}
 		
+		private function get_categories_list() {
+			Flight::db_open();
+			Flight::set('notes_categories', '<option value="">'.Flight::get('lang.default_category').'</option>');
+			$results = Flight::db()->query('SELECT id,title FROM categories WHERE user_id = "'.Flight::get('user.id').'";');
+			
+			while ($row = $results->fetchArray()) {
+				Flight::set('notes_categories', Flight::get('notes_categories').'<option value="'.$row['id'].'">'.$row['title'].'</option>');
+			}
+		}
+		
 		private function user_insert_post($title,$content,$category,$share,$pin) {
 			Flight::db_open();
-			$sql = 'INSERT INTO posts(title,content,category,share,pin) VALUES(
+			$sql = 'INSERT INTO posts(title,content,category,share,author,pin) VALUES(
 																				"'.$title.'",
 																				"'.$content.'",
 																				"'.$category.'",
 																				"'.$share.'",
+																				"'.Flight::get('user.id').'",
 																				"'.$pin.'");';
 			return Flight::db()->query($sql);
 		}
 		
 		private function user_insert_post2($title,$content,$share,$pin) {
 			Flight::db_open();
-			$sql = 'INSERT INTO posts(title,content,share,pin) VALUES(
+			$sql = 'INSERT INTO posts(title,content,share,author,pin) VALUES(
 																				"'.$title.'",
 																				"'.$content.'",
 																				"'.$share.'",
+																				"'.Flight::get('user.id').'",
 																				"'.$pin.'");';
 			return Flight::db()->query($sql);
 		}

@@ -3,8 +3,8 @@
 
 		<div class="col-sm">
 			<select class="form-control" name="post_share">
-				<option value="1">Udostępnij wszystkim</option>
-				<option value="0">Tylko dla mnie</option>
+				<option value="1"><?php print(Flight::get('lang.share_all')); ?></option>
+				<option value="0"><?php print(Flight::get('lang.not_share')); ?></option>
 			</select>
 		</div>
 		<div class="col-sm">
@@ -12,7 +12,7 @@
 		</div>
 		<div class="col-sm">
 			<select class="form-control" name="post_category">
-				<option value="">Domyślna kategoria</option>
+				<?php print(Flight::get('notes_categories')); ?>
 			</select>
 		</div>
 	</div>
