@@ -96,6 +96,8 @@
 	//posts
 	Flight::set('lang.share_all','Udostępnij wszystkim');
 	Flight::set('lang.not_share','Tylko dla mnie');
+	Flight::set('lang.public','Publiczna');
+	Flight::set('lang.private','Prywatna');
 	Flight::set('lang.default_category','Domyślna kategoria');
 	
 	//404
