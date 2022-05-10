@@ -13,5 +13,6 @@
 		<link href="<?php print(Flight::get('app.url')); ?>public/css/style.css" rel="stylesheet" crossorigin="anonymous">
 		<link href="<?php print(Flight::get('app.url')); ?>public/img/favicon.png" rel="icon" sizes="256x256">
 		<meta name="theme-color" content="#7952b3">
-		
+		<!-- jquery -->
 		<script src="<?php print(Flight::get('app.url')); ?>public/js/jquery.min.js"></script>
+		<script src="<?php print(Flight::get('app.url')); ?>public/js/preloader.js"></script>
