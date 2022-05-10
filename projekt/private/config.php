@@ -16,6 +16,7 @@
 	
 	//Others APPS...
 	Flight::set('app.notes.pin_length',6);
+	Flight::set('app.notes.view_post_max_lenght',90);
 	
 	//APPS paths
 	Flight::set('app.path.notes','');

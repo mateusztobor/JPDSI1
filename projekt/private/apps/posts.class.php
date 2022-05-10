@@ -10,37 +10,34 @@
 			Flight::db_open();
 			
 			//default cat posts
-			Flight::render('posts_category_start', array('cat_id' => 0, 'cat_title' => 'Domyślna kategoria'));
+			Flight::render('posts_category_start', array('cat_id' => 0, 'cat_title' => Flight::get('lang.default_category')));
 			$results = Flight::db()->query('SELECT * FROM posts WHERE category is NULL;');
 			$twicePost = false;
-			
 			while ($row = $results->fetchArray()) {
 				if(!$twicePost) Flight::render('2posts_start');
 				if($row['share']) $share = Flight::get('lang.public');
 				else $share = Flight::get('lang.private');
-				Flight::render('post', array('post_title' => $row['title'], 'post_content' => $row['content'], 'post_pin' => $row['pin'], 'post_share' => $share));
+				Flight::render('post', array('post_title' => $row['title'], 'post_content' => Flight::short_text($row['content'],Flight::get('app.notes.view_post_max_lenght')), 'post_pin' => $row['pin'], 'post_share' => $share));
 				if($twicePost) Flight::render('2posts_end');
 				$twicePost=!$twicePost;
 			}
 			Flight::render('posts_category_end');
-		}
-		
-		/*
-		private function form() {
-			$err=false;
-			if(isset($_POST['post_email']) && isset($_POST['post_password'])) {
-				Flight::db_open();
-				$count = Flight::db()->querySingle('SELECT COUNT(*) as count FROM users WHERE email="'.$_POST['post_email'].'";');
-				if($count == 1) {
-					$pass = Flight::db()->querySingle('SELECT password FROM users WHERE email="'.$_POST['post_email'].'";');
-					if(password_verify($_POST['post_password'], $pass)) {
-						$uid = Flight::db()->querySingle('SELECT id FROM users WHERE email="'.$_POST['post_email'].'";');
-						Flight::register_session($uid);
-					} else $err=true;
-				} else $err=true;
+			
+			
+			$results = Flight::db()->query('SELECT id,title FROM categories WHERE user_id = "'.Flight::get('user.id').'";');
+			while ($row = $results->fetchArray()) {
+				Flight::render('posts_category_start', array('cat_id' => 0, 'cat_title' => $row['title']));
+				$twicePost = false;
+				$results2 = Flight::db()->query('SELECT * FROM posts WHERE category = "'.$row['id'].'";');
+				while ($row2 = $results2->fetchArray()) {
+					if(!$twicePost) Flight::render('2posts_start');
+					if($row2['share']) $share = Flight::get('lang.public');
+					else $share = Flight::get('lang.private');
+					Flight::render('post', array('post_title' => $row2['title'], 'post_content' => Flight::short_text($row2['content'],Flight::get('app.notes.view_post_max_lenght')), 'post_pin' => $row2['pin'], 'post_share' => $share));
+					if($twicePost) Flight::render('2posts_end');
+					$twicePost=!$twicePost;
+				}
+				Flight::render('posts_category_end');
 			}
-			if($err)
-				Flight::set('notify',Flight::get('lang.guest_login_error'));
 		}
-		*/
 	}
