@@ -12,11 +12,11 @@
 <form action="<?php print(Flight::get('app.url').Flight::get('app.path.register')); ?>" method="post">
 	<div class="form-group mb-3">
 		<label for="id_login"><?php print(Flight::get('lang.guest_register_email')); ?></label>
-		<input name="post_email" value="" required type="email" class="form-control" id="id_login" placeholder="<?php print(Flight::get('lang.guest_register_email_placeholder')); ?>">
+		<input name="post_email" value="<?php if(isset($_POST['post_email'])) print($_POST['post_email']); ?>" required type="email" class="form-control" id="id_login" placeholder="<?php print(Flight::get('lang.guest_register_email_placeholder')); ?>">
 	</div>
 	<div class="form-group mb-3">
 		<label for="id_nick"><?php print(Flight::get('lang.guest_register_nick')); ?></label>
-		<input name="post_nick" value="" required type="text" class="form-control" id="id_nick" placeholder="<?php print(Flight::get('lang.guest_register_nick_placeholder')); ?>">
+		<input name="post_nick" value="<?php if(isset($_POST['post_nick'])) print($_POST['post_nick']); ?>" required type="text" class="form-control" id="id_nick" placeholder="<?php print(Flight::get('lang.guest_register_nick_placeholder')); ?>">
 		<small class="form-text text-muted"><?php print(Flight::get('lang.guest_register_nick_info')); ?></small>
 	</div>
 	<div class="form-group mb-3">
@@ -39,7 +39,7 @@
         function ConfirmPassword() {
             txtConfirmPassword.setCustomValidity("");
             if (txtPassword.value != txtConfirmPassword.value) {
-                txtConfirmPassword.setCustomValidity("{$lang.guest_register_password_not_match}");
+                txtConfirmPassword.setCustomValidity(<?php print('"'.Flight::get('lang.guest_register_password_not_match').'"'); ?>);
             }
         }
     }

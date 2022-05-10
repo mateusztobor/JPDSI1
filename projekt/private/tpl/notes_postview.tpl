@@ -1,13 +1,13 @@
 <?php if(Flight::get('user.type') == 0) { ?>
-<div class="mb-3 text-center"><code><?php print(Flight::get('lang.notes_guest_desc')); ?></code></div>
+	<div class="mb-3 text-center"><code><?php print(Flight::get('lang.notes_guest_desc')); ?></code></div>
 <?php } ?>
 
 
 <div class="mb-3 row">
 	<div class="col-sm">
-		<select class="form-control" name="post_share" readonly>
-			<option value="1">Udostępnij wszystkim</option>
-			<option value="0">Tylko dla mnie</option>
+		<select class="form-control" name="post_share" disabled>
+			<option value="1" <?php if(Flight::get('notes_post_share')) print('selected'); ?>>Udostępnij wszystkim</option>
+			<option value="0" <?php if(!Flight::get('notes_post_share')) print('selected'); ?>>Tylko dla mnie</option>
 		</select>
 	</div>
 	<div class="col-sm">
@@ -23,7 +23,7 @@
 		<textarea id="notes" class="form-control col-xs-12" readonly><?php print(Flight::get('notes_post_content')); ?></textarea>
 		<a href="<?php print(Flight::get('app.url').Flight::get('app.path.notes')); ?>" class="btn btn-danger"><?php print(Flight::get('lang.notes.postview_addnew')); ?></a>
 		
-		<a target="_blank" href="<?php print(Flight::get('app.url').'txt/'.Flight::get('post_id')); ?>" class="btn btn-danger"><?php print(Flight::get('lang.notes.postview_showtxt')); ?></a>
+		<a target="_blank" href="<?php print(Flight::get('app.url').'txt/'.Flight::get('notes_post_id')); ?>" class="btn btn-danger"><?php print(Flight::get('lang.notes.postview_showtxt')); ?></a>
 		
 		<a onclick="copyUrl()" class="btn btn-danger" id="btncopy"><?php print(Flight::get('lang.notes.postview_copyurl')); ?></a>
 </div>
