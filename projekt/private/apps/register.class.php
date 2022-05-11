@@ -104,7 +104,7 @@
 		}
 		
 		private function create_account() {
-			$sql = 'INSERT INTO users(nick,email,password) VALUES("'.htmlspecialchars($_POST['post_nick']).'","'.$_POST['post_email'].'","'.password_hash($_POST['post_password'], PASSWORD_DEFAULT).'")';
+			$sql = 'INSERT INTO users(nick,email,password) VALUES("'.htmlspecialchars($_POST['post_nick']).'","'.strtolower($_POST['post_email']).'","'.password_hash($_POST['post_password'], PASSWORD_DEFAULT).'")';
 			return Flight::db()->query($sql);
 		}
 	}

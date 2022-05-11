@@ -21,11 +21,11 @@
 </div>
 <div class="text-center">
 		<textarea id="notes" class="form-control col-xs-12" readonly><?php print(Flight::get('notes_post_content')); ?></textarea>
-		<a href="<?php print(Flight::get('app.url').Flight::get('app.path.notes')); ?>" class="btn btn-danger"><?php print(Flight::get('lang.notes.postview_addnew')); ?></a>
+		<a href="<?php print(Flight::get('app.url').Flight::get('app.path.notes')); ?>" class="btn btn-secondary"><?php print(Flight::get('lang.notes.postview_addnew')); ?></a>
 		
-		<a target="_blank" href="<?php print(Flight::get('app.url').Flight::get('app.path.txt').'/'.Flight::get('notes_post_id')); ?>" class="btn btn-danger"><?php print(Flight::get('lang.notes.postview_showtxt')); ?></a>
+		<a target="_blank" href="<?php print(Flight::get('app.url').Flight::get('app.path.txt').'/'.Flight::get('notes_post_id')); ?>" class="btn btn-secondary"><?php print(Flight::get('lang.notes.postview_showtxt')); ?></a>
 		
-		<a onclick="copyUrl()" class="btn btn-danger" id="btncopy"><?php print(Flight::get('lang.notes.postview_copyurl')); ?></a>
+		<a onclick="copyUrl()" class="btn btn-secondary" id="btncopy"><?php print(Flight::get('lang.notes.postview_copyurl')); ?></a>
 </div>
 
 <script>

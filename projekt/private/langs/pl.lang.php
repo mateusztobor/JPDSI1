@@ -60,7 +60,7 @@
 	
 	
 	//USER_SETTINGS
-	Flight::set('lang.user_settings_title','Notuś - Ustawienia konta');
+	Flight::set('lang.user_settings_title','Ustawienia konta');
 	Flight::set('lang.user_settings_title2','Ustawienia konta');
 	Flight::set('lang.user_settings_chpass_title','Zmiana hasła');
 	Flight::set('lang.user_settings_chpass_old_pass','Obecne hasło');
@@ -94,6 +94,7 @@
 	<a href="'.Flight::get('app.url').Flight::get('app.path.notes').'" class="btn btn-danger">'.Flight::get('lang.notes.postview_addnew').'</a>');
 	
 	//posts
+	Flight::set('lang.my_posts._title','Moje notatki');
 	Flight::set('lang.share_all','Udostępnij wszystkim');
 	Flight::set('lang.not_share','Tylko dla mnie');
 	Flight::set('lang.public','Publiczna');

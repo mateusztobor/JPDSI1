@@ -9,11 +9,11 @@
 			$err=false;
 			if(isset($_POST['post_email']) && isset($_POST['post_password'])) {
 				Flight::db_open();
-				$count = Flight::db()->querySingle('SELECT COUNT(*) as count FROM users WHERE email="'.$_POST['post_email'].'";');
+				$count = Flight::db()->querySingle('SELECT COUNT(*) as count FROM users WHERE email="'.strtolower($_POST['post_email']).'";');
 				if($count == 1) {
-					$pass = Flight::db()->querySingle('SELECT password FROM users WHERE email="'.$_POST['post_email'].'";');
+					$pass = Flight::db()->querySingle('SELECT password FROM users WHERE email="'.strtolower($_POST['post_email']).'";');
 					if(password_verify($_POST['post_password'], $pass)) {
-						$uid = Flight::db()->querySingle('SELECT id FROM users WHERE email="'.$_POST['post_email'].'";');
+						$uid = Flight::db()->querySingle('SELECT id FROM users WHERE email="'.strtolower($_POST['post_email']).'";');
 						Flight::register_session($uid);
 					} else $err=true;
 				} else $err=true;

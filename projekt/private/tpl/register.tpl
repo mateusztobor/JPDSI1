@@ -1,4 +1,4 @@
-<h1><?php print(Flight::get('lang.guest_register_title2')); ?></h1>
+<h1 class="text-danger"><?php print(Flight::get('lang.guest_register_title2')); ?></h1>
 <div class="mb-3"><code><?php print(Flight::get('lang.guest_register_desc')); ?></code></div>
 
 <?php
