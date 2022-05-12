@@ -94,7 +94,8 @@
 	<a href="'.Flight::get('app.url').Flight::get('app.path.notes').'" class="btn btn-danger">'.Flight::get('lang.notes.postview_addnew').'</a>');
 	
 	//posts
-	Flight::set('lang.my_posts._title','Moje notatki');
+	Flight::set('lang.categories_title','Zarządzanie kategoriami');
+	Flight::set('lang.my_posts_title','Moje notatki');
 	Flight::set('lang.share_all','Udostępnij wszystkim');
 	Flight::set('lang.not_share','Tylko dla mnie');
 	Flight::set('lang.public','Publiczna');

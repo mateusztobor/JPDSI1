@@ -1,7 +1,7 @@
-<h1><?php print(Flight::get('lang.user_settings_title2')); ?></h1>
+<h1 class="text-danger"><?php print(Flight::get('lang.user_settings_title2')); ?></h1>
 
 
-<h3><?php print(Flight::get('lang.user_settings_chpass_title')); ?></h3>
+<h3 class="text-primary"><?php print(Flight::get('lang.user_settings_chpass_title')); ?></h3>
 <?php
 	if(Flight::has('register_notify'))
 		Flight::render('alert', array('type' => 'warning', 'content'=>Flight::get('register_notify')));

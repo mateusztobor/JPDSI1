@@ -1,7 +1,7 @@
 <?php
 	class posts_controller{
 		public function view() {
-			Flight::render('main_start', array('title' => Flight::get('lang.my_posts._title'), 'tpl'=>'posts'));
+			Flight::render('main_start', array('title' => Flight::get('lang.my_posts_title'), 'tpl'=>'posts'));
 			$this->posts_list();
 			Flight::render('main_end');
 		}
