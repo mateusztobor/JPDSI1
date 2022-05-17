@@ -23,6 +23,7 @@ class notes_postview_controller {
 		if($this->check_exists()) {
 			$this->get_post('share');
 			$this->get_post('author');
+			$this->get_category();
 			
 			if(!Flight::get('notes_post_share') && Flight::get('notes_post_author') == Flight::get('user.id') || Flight::get('notes_post_share') || Flight::get('user.type') == 2) {
 				
@@ -70,12 +71,6 @@ class notes_postview_controller {
 		if($content) Flight::set('notes_post_content',$content);
 	}
 	
-	private function get_share() {
-		Flight::db_open();
-		$share = Flight::db()->querySingle('SELECT share FROM posts WHERE pin="'.$this->id.'";');
-		if($share) Flight::set('notes_post_share',$share);
-	}
-	
 	private function get_post($what) {
 		Flight::db_open();
 		$content = Flight::db()->querySingle('SELECT '.$what.' FROM posts WHERE pin="'.$this->id.'";');
@@ -84,8 +79,12 @@ class notes_postview_controller {
 	
 	private function get_category() {
 		Flight::db_open();
-		$share = Flight::db()->querySingle('SELECT share FROM posts WHERE pin="'.$this->id.'";');
-		if($share) Flight::set('notes_post_share',$share);
+		$catID = Flight::db()->querySingle('SELECT category FROM posts WHERE pin="'.$this->id.'";');
+		if(empty($catID)) Flight::set('notes_post_category', Flight::get('lang.default_category'));
+		else {
+			$catName = Flight::db()->querySingle('SELECT title FROM categories WHERE id="'.$catID.'";');
+			if($catName) Flight::set('notes_post_category',$catName);
+		}
 	}
 	
 }

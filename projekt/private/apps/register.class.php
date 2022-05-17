@@ -2,6 +2,7 @@
 	class register_controller{
 		
 		public function view() {
+			Flight::set('app.path.register.a',true);
 			$this->form();
 			Flight::render('main', array('title' => Flight::get('lang.guest_register_title'), 'tpl'=>'register'));
 		}

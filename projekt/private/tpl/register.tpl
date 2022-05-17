@@ -1,5 +1,5 @@
-<h1 class="text-danger"><?php print(Flight::get('lang.guest_register_title2')); ?></h1>
-<div class="mb-3"><code><?php print(Flight::get('lang.guest_register_desc')); ?></code></div>
+<h4><?php print(Flight::get('lang.guest_register_title2')); ?></h4>
+<div class="mb-3 lead"><?php print(Flight::get('lang.guest_register_desc')); ?></div>
 
 <?php
 	if(Flight::has('notify')) {

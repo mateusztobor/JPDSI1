@@ -1,10 +1,7 @@
 <?php
-	
-	
-	
 	//HEADER
 	Flight::set('lang.header_toggle_nav','Rozwiń menu');
-	Flight::set('lang.header_search_placeholder','Wpisz id lub tytuł notatki :)');
+	Flight::set('lang.header_search_placeholder','Wpisz id notatki');
 	Flight::set('lang.header_search_btn','»');
 	
 	//NAV_GUEST
@@ -57,8 +54,6 @@
 	Flight::set('lang.guest_login_button','Zaloguj się');
 	Flight::set('lang.guest_login_error','Podana kombinacja loginu i hasła jest nieprawidłowa.');
 	
-	
-	
 	//USER_SETTINGS
 	Flight::set('lang.user_settings_title','Ustawienia konta');
 	Flight::set('lang.user_settings_title2','Ustawienia konta');
@@ -74,21 +69,19 @@
 	Flight::set('lang.user_settings_chpass_old_pass_error','Wprowadzono niepoprawne aktualne hasło.');
 	Flight::set('lang.user_settings_chpass_unkown_error','Błąd systemu.');
 	
-	
 	//APP_NOTES
 	Flight::set('lang.notes_title','Tworzenie notatki');
 	Flight::set('lang.notes_guest_desc','Zaloguj się, aby móc lepiej zarządzać swoimi notatkami!');
 	Flight::set('lang.notes_empty_notes','Nie można zapisać pustej notatki!');
 	Flight::set('lang.notes_unkown_error','Błąd systemu.');
 	Flight::set('lang.notes_save_button','Zapisz notusia');
-	
 	Flight::set('lang.notes.postview_title','Notatka: ');
 	Flight::set('lang.notes.postview_noaccess','Nie masz dostępu do tej notatki');
 	Flight::set('lang.notes.postview_copiedurl','Skopiowano do schowka');
 	Flight::set('lang.notes.postview_copyurl','Kopiuj adres do schowka');
 	Flight::set('lang.notes.postview_showtxt','Wyświetl jako txt');
 	Flight::set('lang.notes.postview_addnew','Stwórz nową notatkę');
-	
+	Flight::set('lang.notes.maxcharsdesc','Limit znaków: 500. Zaloguj się, aby notować bez limitu!');
 	Flight::set('lang.notes.postview_notexist_title','Brak notatki');
 	Flight::set('lang.notes.postview_notexist','<p>Taka notatka nie istnieje :(</p>
 	<a href="'.Flight::get('app.url').Flight::get('app.path.notes').'" class="btn btn-danger">'.Flight::get('lang.notes.postview_addnew').'</a>');
@@ -101,6 +94,16 @@
 	Flight::set('lang.public','Publiczna');
 	Flight::set('lang.private','Prywatna');
 	Flight::set('lang.default_category','Domyślna kategoria');
+	Flight::set('lang.category:','Kategoria: ');
+	
+	//categories
+	Flight::set('lang.new_category_title','Dodawanie nowej kategorii');
+	Flight::set('lang.new_category_name','Tytuł kategorii');
+	Flight::set('lang.add_category','Dodaj kategorię');
+	Flight::set('lang.mgmt_categories','Zarządzaj istniejącymi kategoriami');
+	Flight::set('lang.del_category','Usuń kategorię');
+	Flight::set('lang.clear_category','Wyczyść kategorię');
+	Flight::set('lang.save_category','Zapisz');
 	
 	//404
 	Flight::set('lang.404_title','Błąd');
@@ -112,3 +115,8 @@
 	Flight::set('lang.db_title','Błąd systemu');
 	Flight::set('lang.db_title2','Błąd połączenia z bazą danych');
 	Flight::set('lang.db_desc','Przykro nam, ale strona obecnie ma problemy z połączeniem z bazą danych.<br>Wróć niebawem!');
+	
+	
+	
+	
+?>

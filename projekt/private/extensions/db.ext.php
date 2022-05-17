@@ -13,3 +13,4 @@
 			Flight::clear('db.opened');
 		}
 	});
+?>

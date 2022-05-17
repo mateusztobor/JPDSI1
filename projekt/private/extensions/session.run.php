@@ -19,4 +19,4 @@
 		} else Flight::destroy_session();
 	} else
 		Flight::set('user.type',0);
-	
+?>

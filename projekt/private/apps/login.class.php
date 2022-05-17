@@ -1,6 +1,7 @@
 <?php
 	class login_controller{
 		public function view() {
+			Flight::set('app.path.login.a',true);
 			$this->form();
 			Flight::render('main', array('title' => Flight::get('lang.guest_login_title'), 'tpl'=>'login'));
 		}
