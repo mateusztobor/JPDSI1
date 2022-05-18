@@ -20,7 +20,8 @@
 				if(!$twicePost) Flight::render('2posts_start');
 				if($row['share']) $share = Flight::get('lang.public');
 				else $share = Flight::get('lang.private');
-				Flight::render('post', array('post_title' => $row['title'], 'post_content' => Flight::short_text($row['content'],Flight::get('app.notes.view_post_max_lenght')), 'post_pin' => $row['pin'], 'post_share' => $share));
+				$row['date'] = Flight::date_pl($row['date']);
+				Flight::render('post', array('post_title' => $row['title'], 'post_content' => Flight::short_text($row['content'],Flight::get('app.notes.view_post_max_lenght')), 'post_pin' => $row['pin'], 'post_share' => $share, 'post_date' => $row['date']));
 				if($twicePost) Flight::render('2posts_end');
 				$twicePost=!$twicePost;
 				$c++;
@@ -39,7 +40,8 @@
 					if(!$twicePost) Flight::render('2posts_start');
 					if($row2['share']) $share = Flight::get('lang.public');
 					else $share = Flight::get('lang.private');
-					Flight::render('post', array('post_title' => $row2['title'], 'post_content' => Flight::short_text($row2['content'],Flight::get('app.notes.view_post_max_lenght')), 'post_pin' => $row2['pin'], 'post_share' => $share));
+					$row2['date'] = Flight::date_pl($row2['date']);
+					Flight::render('post', array('post_title' => $row2['title'], 'post_content' => Flight::short_text($row2['content'],Flight::get('app.notes.view_post_max_lenght')), 'post_pin' => $row2['pin'], 'post_share' => $share, 'post_date' => $row2['date']));
 					if($twicePost) Flight::render('2posts_end');
 					$twicePost=!$twicePost;
 					$c++;

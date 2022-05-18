@@ -95,6 +95,10 @@
 	Flight::set('lang.private','Prywatna');
 	Flight::set('lang.default_category','Domyślna kategoria');
 	Flight::set('lang.category:','Kategoria: ');
+	Flight::set('lang.author:','Autor: ');
+	Flight::set('lang.last_modified:','Ostatnia modyfikacja: ');
+	Flight::set('lang.no_title','Bez tytułu');
+	Flight::set('lang.no_author','Gość');
 	
 	//categories
 	Flight::set('lang.new_category_title','Dodawanie nowej kategorii');

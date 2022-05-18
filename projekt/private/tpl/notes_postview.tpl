@@ -5,21 +5,33 @@
 
 <div class="mb-3 row">
 	<div class="col-sm">
-		<input class="form-control" value="<?php if(Flight::get('notes_post_share') == 1) print(Flight::get('lang.share_all')); else print(Flight::get('lang.not_share')); ?>" readonly>
+		<input class="form-control" value="<?php if(Flight::get('notes_post_share') == 1) print(Flight::get('lang.public')); else print(Flight::get('lang.private')); ?>" readonly>
 	</div>
 	<div class="col-sm">
-		<input class="form-control" value="<?php print(Flight::get('title')); ?>" readonly>
+		<input class="form-control" value="<?php if(Flight::get('notes_post_title')) print(Flight::get('notes_post_title')); else print(Flight::get('lang.no_title')); ?>" readonly>
 	</div>
 	<div class="col-sm">
 		<input class="form-control" value="<?php print(Flight::get('lang.category:').Flight::get('notes_post_category')); ?>" readonly>
 	</div>
 </div>
 <div class="text-center">
-		<textarea id="notes" class="form-control col-xs-12" readonly><?php print(Flight::get('notes_post_content')); ?></textarea>
-		
-		<a href="<?php print(Flight::get('app.url').Flight::get('app.path.notes')); ?>" class="btn btn-secondary"><?php print(Flight::get('lang.notes.postview_addnew')); ?></a>
-		<a target="_blank" href="<?php print(Flight::get('app.url').Flight::get('app.path.txt').'/'.Flight::get('notes_post_id')); ?>" class="btn btn-secondary"><?php print(Flight::get('lang.notes.postview_showtxt')); ?></a>
-		<a onclick="copyUrl()" class="btn btn-secondary" id="btncopy"><?php print(Flight::get('lang.notes.postview_copyurl')); ?></a>
+	<div class="mt-1 row">
+		<div class="col text-start">
+			
+			<?php print(Flight::get('lang.last_modified:').Flight::get('notes_post_date')); ?>
+		</div>
+		<div class="col text-end">
+			<?php print(Flight::get('lang.author:').Flight::get('notes_post_author_nick')); ?>
+		</div>
+	</div>
+
+	<textarea id="notes" class="form-control col-xs-12" readonly><?php print(Flight::get('notes_post_content')); ?></textarea>
+	
+
+	
+	<a href="<?php print(Flight::get('app.url').Flight::get('app.path.notes')); ?>" class="btn btn-secondary"><?php print(Flight::get('lang.notes.postview_addnew')); ?></a>
+	<a target="_blank" href="<?php print(Flight::get('app.url').Flight::get('app.path.txt').'/'.Flight::get('notes_post_id')); ?>" class="btn btn-secondary"><?php print(Flight::get('lang.notes.postview_showtxt')); ?></a>
+	<a onclick="copyUrl()" class="btn btn-secondary" id="btncopy"><?php print(Flight::get('lang.notes.postview_copyurl')); ?></a>
 </div>
 
 <script>
