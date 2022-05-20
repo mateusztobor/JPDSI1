@@ -16,6 +16,10 @@
 		<!-- jquery -->
 		<script src="<?php print(Flight::get('app.url')); ?>public/js/jquery.min.js"></script>
 		<script src="<?php print(Flight::get('app.url')); ?>public/js/preloader.js"></script>
+		<!-- jquery ui -->
+		<script src="<?php print(Flight::get('app.url')); ?>public/js/jquery-ui.min.js"></script>
+		<link href="<?php print(Flight::get('app.url')); ?>public/css/jquery-ui.structure.min.css" rel="stylesheet">
+		<link href="<?php print(Flight::get('app.url')); ?>public/css/jquery-ui.theme.min.css" rel="stylesheet">
 	</head>
 	<body class="d-flex flex-column h-100">
 		<div class="preloader js-preloader flex-center">

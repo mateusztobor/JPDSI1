@@ -1,0 +1,1 @@
+<?php print(Flight::get('lang.no_posts')); ?>

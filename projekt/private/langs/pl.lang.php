@@ -99,6 +99,8 @@
 	Flight::set('lang.last_modified:','Ostatnia modyfikacja: ');
 	Flight::set('lang.no_title','Bez tytułu');
 	Flight::set('lang.no_author','Gość');
+	Flight::set('lang.title_of_category','Tytuł kategorii');
+	Flight::set('lang.no_posts','Brak wpisów w tej kategorii.');
 	
 	//categories
 	Flight::set('lang.new_category_title','Dodawanie nowej kategorii');
@@ -107,7 +109,7 @@
 	Flight::set('lang.mgmt_categories','Zarządzaj istniejącymi kategoriami');
 	Flight::set('lang.del_category','Usuń kategorię');
 	Flight::set('lang.clear_category','Wyczyść kategorię');
-	Flight::set('lang.save_category','Zapisz');
+	Flight::set('lang.save_category','Zapisz zmiany');
 	
 	//404
 	Flight::set('lang.404_title','Błąd');

@@ -51,8 +51,7 @@ h1,h2,h3,h4,h5,h6,h7 {color: #dc3545 !important;}
 .collapsed .collapse-icon-plus {display: none;}
 
 
-    #notes
-    {
+    #notes {
         border: 1px solid #EEEEEE;
         box-shadow: 1px 1px 0 #DDDDDD;
         display: block;
@@ -82,9 +81,11 @@ h1,h2,h3,h4,h5,h6,h7 {color: #dc3545 !important;}
 		font-size: 1.75em;
 	}
 	
-	.catbox_edit {
+	.notes_category_title .catbox_edit {
 		font-size: 1.2em !important;
 		margin-bottom: 10px;
+		border-bottom: 0 !important;
+		
 	}
 	
 	.notes_category a {
