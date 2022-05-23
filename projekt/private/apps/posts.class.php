@@ -15,6 +15,7 @@
 			$results = Flight::db()->query('SELECT * FROM posts WHERE category is NULL AND author="'.Flight::get('user.id').'" ORDER BY "date" DESC;');
 			
 			$c = 0;
+			$i=0;
 			$twicePost = false;
 			while ($row = $results->fetchArray()) {
 				if(!$twicePost) Flight::render('2posts_start');
@@ -24,10 +25,10 @@
 				Flight::render('post', array('post_title' => $row['title'], 'post_content' => Flight::short_text($row['content'],Flight::get('app.notes.view_post_max_lenght')), 'post_pin' => $row['pin'], 'post_share' => $share, 'post_date' => $row['date']));
 				if($twicePost) Flight::render('2posts_end');
 				$twicePost=!$twicePost;
-				$c++;
+				$c++; $i++;
 			}
-
-			if($c%2 != 0) Flight::render('2posts_end');
+			if($i == 0) Flight::render('posts_empty_category');
+			elseif($c%2 != 0) Flight::render('2posts_end');
 			Flight::render('posts_category_end');
 			
 			
