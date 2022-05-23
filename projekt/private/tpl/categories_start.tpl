@@ -1,4 +1,5 @@
 	<h4><?php print(Flight::get('lang.new_category_title')); ?></h4>
+	<div class="mb-3 text-start lead"><?php print(Flight::get('lang.categories_add.desc')); ?></div>
 	<form method="post" action="<?php print(Flight::get('app.url').Flight::get('app.path.categories')); ?>">
 	<div class="notes_category_title notes_category_title_edit" style="cursor:default !important;">
 		<div class="catbox catbox_edit">
@@ -25,5 +26,6 @@
 </script>
 <div class="shadow p-3 rounded bg-light mt-3">
 	<h4 class="text-danger"><?php print(Flight::get('lang.mgmt_categories')); ?></h4>
+	<div class="mb-3 text-start lead"><?php print(Flight::get('lang.categories_edit.desc')); ?></div>
 	<form method="post" action="<?php print(Flight::get('app.url').Flight::get('app.path.categories')); ?>">
 		<div id="sortable">

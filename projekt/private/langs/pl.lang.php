@@ -81,7 +81,7 @@
 	Flight::set('lang.notes.postview_copyurl','Kopiuj adres do schowka');
 	Flight::set('lang.notes.postview_showtxt','Wyświetl jako txt');
 	Flight::set('lang.notes.postview_addnew','Stwórz nową notatkę');
-	Flight::set('lang.notes.maxcharsdesc','Limit znaków: 500. Zaloguj się, aby notować bez limitu!');
+	Flight::set('lang.notes.underdesc','Notując jako gość nie będziesz mógł edytować swoich notatek.');
 	Flight::set('lang.notes.postview_notexist_title','Brak notatki');
 	Flight::set('lang.notes.postview_notexist','<p>Taka notatka nie istnieje :(</p>
 	<a href="'.Flight::get('app.url').Flight::get('app.path.notes').'" class="btn btn-danger">'.Flight::get('lang.notes.postview_addnew').'</a>');
@@ -101,6 +101,15 @@
 	Flight::set('lang.no_author','Gość');
 	Flight::set('lang.title_of_category','Tytuł kategorii');
 	Flight::set('lang.no_posts','Brak wpisów w tej kategorii.');
+	Flight::set('lang.notes_save_changes','Zapisz zmiany');
+	Flight::set('lang.notes_edit_post','Edytuj notatkę');
+	Flight::set('lang.del_post','Usuń');
+	Flight::set('lang.postview_no_access_title','Brak uprawnień');
+	Flight::set('lang.postview_no_access_content','Nie posiadasz uprawnień aby zobaczyć zawartość tej notatki.<br>
+	<a href="'.Flight::get('app.url').Flight::get('app.path.notes').'" class="btn btn-danger mt-2">'.Flight::get('lang.notes.postview_addnew').'</a>');
+	Flight::set('lang.post_del_modal_title','Usuwanie notatki');
+	Flight::set('lang.post_del_modal_desc','Czy na pewno chcesz usunąć tę notatkę?<br>Po usunięciu nie będzie można jej odzyskać.');
+	Flight::set('lang.post_del_modal_del','Usuń');
 	
 	//categories
 	Flight::set('lang.new_category_title','Dodawanie nowej kategorii');
@@ -110,6 +119,37 @@
 	Flight::set('lang.del_category','Usuń kategorię');
 	Flight::set('lang.clear_category','Wyczyść kategorię');
 	Flight::set('lang.save_category','Zapisz zmiany');
+	Flight::set('lang.categories_add.desc','Nowa kategoria pojawi się na końcu listy kategorii.');
+	Flight::set('lang.categories_edit.desc','Przeciągnij kategorie w celu ich uporządkowania.');
+	Flight::set('lang.categories_del_modal_title','Usuwanie kategorii');
+	Flight::set('lang.categories_del_modal_desc','Czy na pewno chcesz usunąć kategorię?<br>Wszystkie posty zostaną usunięte.');
+	Flight::set('lang.categories_del_modal_del','Usuń');
+	Flight::set('lang.cancel','Anuluj');
+	
+	//admin
+	Flight::set('lang.admincp','Admin CP');
+	Flight::set('lang.admin_dashboard','Dashboard');
+	Flight::set('lang.admincp_dashboard_title','AdminCP - Dashboard');
+	Flight::set('lang.admincp_dashboard_desc',"Jako administrator systemu Notuś posiadasz uprawnienia ghost-mode'a.<br>
+	Możesz przeglądać, edytować i usuwać wszystkie wpisy!");
+		Flight::set('lang.count_users','Ilość zarejestrowanych użytkowników');
+		Flight::set('lang.count_posts','Łączna ilość postów');
+		Flight::set('lang.db_size','Rozmiar bazy SQLite3');
+		Flight::set('lang.count_posts_users','Ilość postów od zarejestrowanych');
+		Flight::set('lang.count_posts_guests','Ilość postów od gości');
+		Flight::set('lang.last_added_post','Ostatnio dodany wpis');
+		Flight::set('lang.last_modified_post','Ostatnio modyfikowany wpis');
+		Flight::set('lang.gotopost','Przejdź do wpisu');
+		Flight::set('lang.phpver','Wersja PHP');
+	Flight::set('lang.admin_admins','Nadaj/odbierz uprawnienia');
+		Flight::set('lang.admin_admins_title','AdminCP - Nadaj/odbierz uprawnienia');
+		Flight::set('lang.admincp_acceptdo',"'Potwierdź wykonanie czynności'");
+		Flight::set('lang.admin_insertnick',"Wprowadź id lub nick");
+		Flight::set('lang.admin_giveperm',"Nadaj uprawnienia");
+	Flight::set('lang.admin_users',"Zarządzaj użytkownikami");
+	Flight::set('lang.admincp_users',"Zarządzaj użytkownikami");
+	Flight::set('lang.admincp_users_title',"Zarządzaj użytkownikami");
+	Flight::set('lang.admin_deluser',"Usuń użytkownika i jego posty");
 	
 	//404
 	Flight::set('lang.404_title','Błąd');

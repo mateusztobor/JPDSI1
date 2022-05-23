@@ -1,5 +1,5 @@
 <?php if(Flight::get('user.type') == 0) { ?>
-	<div class="mb-3 text-center"><code><?php print(Flight::get('lang.notes_guest_desc')); ?></code></div>
+	<div class="mb-3 text-center lead"><?php print(Flight::get('lang.notes_guest_desc')); ?></div>
 <?php } ?>
 
 

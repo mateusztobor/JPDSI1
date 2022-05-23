@@ -3,8 +3,8 @@
 
 <h4><?php print(Flight::get('lang.user_settings_chpass_title')); ?></h4>
 <?php
-	if(Flight::has('register_notify'))
-		Flight::render('alert', array('type' => 'warning', 'content'=>Flight::get('register_notify')));
+	if(Flight::has('notify'))
+		Flight::render('alert', array('type' => Flight::get('notify_type'), 'content'=>Flight::get('notify')));
 ?>
 <form action="<?php print(Flight::get('app.url').Flight::get('app.path.account')); ?>" method="post">
 	<div class="form-group mb-3">

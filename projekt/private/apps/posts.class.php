@@ -12,7 +12,7 @@
 			
 			//default cat posts
 			Flight::render('posts_category_start', array('cat_id' => 0, 'cat_title' => Flight::get('lang.default_category')));
-			$results = Flight::db()->query('SELECT * FROM posts WHERE category is NULL ORDER BY "date";');
+			$results = Flight::db()->query('SELECT * FROM posts WHERE category is NULL AND author="'.Flight::get('user.id').'" ORDER BY "date" DESC;');
 			
 			$c = 0;
 			$twicePost = false;
@@ -36,7 +36,7 @@
 				Flight::render('posts_category_start', array('cat_id' => $row['id'], 'cat_title' => $row['title']));
 				$twicePost = false;
 				$c=0;
-				$results2 = Flight::db()->query('SELECT * FROM posts WHERE category = "'.$row['id'].'" ORDER BY "date";');
+				$results2 = Flight::db()->query('SELECT * FROM posts WHERE category = "'.$row['id'].'" ORDER BY "date" DESC;');
 				$i=0;
 				while ($row2 = $results2->fetchArray()) {
 					if(!$twicePost) Flight::render('2posts_start');
@@ -48,7 +48,7 @@
 					$twicePost=!$twicePost;
 					$c++; $i++;
 				}
-				if($i == 0) Flight::render('categories_empty_category');
+				if($i == 0) Flight::render('posts_empty_category');
 				else if($c%2 != 0) Flight::render('2posts_end');
 				Flight::render('posts_category_end');
 			}

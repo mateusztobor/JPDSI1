@@ -1,10 +1,11 @@
 <?php
-	class categories_controller{
+	class categories_controller {
 		public function view() {
 			Flight::set('app.path.categories.a',true);
 			Flight::db_open();
 			$this->save_form();
 			$this->add_form();
+			$this->del_form();
 			Flight::render('main_start', array('title' => Flight::get('lang.categories_title'), 'tpl'=>'posts'));
 			Flight::render('categories_start', array('title' => Flight::get('lang.categories_title'), 'tpl'=>'posts'));
 			$this->posts_list();
@@ -44,11 +45,10 @@
 			}
 		}
 		
-		/*
-		private function verify_category($id) {
-			$count = Flight::db()->querySingle('SELECT COUNT(*) as count FROM categories WHERE id="'.$id.'" AND user_id="'.Flight::get('user.id').'";');
-			if($count==1) return true;
-			return false;
+		private function del_form() {
+			if(isset($_GET['del']) && is_numeric($_GET['del'])) {
+				Flight::db()->query('DELETE FROM categories WHERE id="'.htmlspecialchars($_GET['del']).'" AND user_id="'.Flight::get('user.id').'";');
+				Flight::redirect(Flight::get('app.url').Flight::get('app.path.categories'));
+			}
 		}
-		*/
 	}

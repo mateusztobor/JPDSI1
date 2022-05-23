@@ -29,6 +29,9 @@
 	Flight::set('app.path.posts','notatki');
 	Flight::set('app.path.txt','txt');
 	Flight::set('app.path.categories','kategorie');
+	Flight::set('app.path.admin_dashboard','admin/dashboard');
+	Flight::set('app.path.admin_admins','admin/admins');
+	Flight::set('app.path.admin_users','admin/users');
 	
 	//Flight
 	Flight::set('flight.base_url', NULL); //Override the base url of the request. (default: null)
